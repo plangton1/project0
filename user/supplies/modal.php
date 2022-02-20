@@ -1,6 +1,6 @@
   <!-- Employee Details -->
   <div id="dataModal" class="modal fade">
-      <div class="modal-dialog">
+      <div class="modal-dialog" style="max-width: 60%;">
           <div class="modal-content">
               <div class="modal-header">
                   <h4 class="modal-title">รายละเอียดของซัพพลายเออร์</h4>
@@ -17,7 +17,7 @@
   <!-- /Employee Details -->
   <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
   <div id="add_data_Modal" class="modal fade">
-      <div class="modal-dialog ">
+      <div class="modal-dialog" style="max-width: 50%;">
           <div class="modal-content">
               <div class="modal-header">
                   <h4 class="modal-title">เพิ่มข้อมูลซัพพลายเออร์</h4>
@@ -29,8 +29,9 @@
 
                   <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
-                            <div class="col-sm-9 mb-3">
-                                <img id="preview" width="150" height="150">
+                            <div class="col-sm-6 mb-3">
+                                <img id="preview" width="250" height="250">
+                                <hr>
                                 <input type="file" class="form-control" id="sup_img" name="sup_img" />
                             </div>
                         </div>
@@ -71,9 +72,9 @@
                       <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
                   </form>
               </div>
-              <div class="modal-footer">
+          
                   <button type="button" class="btn btn-danger" data-dismiss="modal">ปิดหน้าต่างนี้</button>
-              </div>
+              
           </div>
       </div>
   </div>

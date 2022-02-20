@@ -1,10 +1,23 @@
 <?php
+$n=10;
+function getName($n) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $randomString .= $characters[$index];
+    } 
+    return $randomString;
+}
+?>
+<?php
 include 'conn.php'; // MySQL Connection
 if (isset($_POST) && !empty($_POST)) {
      $output = '';
      $message = '';
      // print_r($_POST["product_name"]);
      // print_r($_FILES['product_img']['name']);
+     $product_id = getName($n);
      $product_name = $_POST["product_name"];
      $product_price = $_POST["product_price"];
      $product_net = $_POST["product_net"];
@@ -40,8 +53,8 @@ if (isset($_POST) && !empty($_POST)) {
                $filename = '';
           }
           $query = "  
-           INSERT INTO product(product_name,product_price,product_net,product_type,product_detail,product_img)  
-           VALUES('$product_name','$product_price','$product_net','$product_type','$product_detail','$filename');  
+           INSERT INTO product(product_id,product_name,product_price,product_net,product_type,product_detail,product_img)  
+           VALUES('$product_id' , '$product_name','$product_price','$product_net','$product_type','$product_detail','$filename');  
            ";
           $message = 'เพิ่มข้อมูลเรียบร้อยแล้ว';
      } else {

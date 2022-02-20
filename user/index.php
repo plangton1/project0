@@ -53,6 +53,16 @@
         } else {
           include('product/index.php');
         }
+      } elseif (isset($_GET['page']) && $_GET['page'] == 'stock') {
+        if (isset($_GET['function']) && $_GET['function'] == 'update') {
+          include('stock/update.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'insert') {
+          include('stock/insert.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'delete') {
+          include('stock/delete.php');
+        } else {
+          include('stock/index.php');
+        }
       }elseif (isset($_GET['page']) && $_GET['page'] == 'logout') {
       include('logout/index.php');
       }

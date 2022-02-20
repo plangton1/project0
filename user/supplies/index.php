@@ -5,15 +5,13 @@ $result = mysqli_query($connect, $query);
 ?>
 
 <div class="from-group">
+<?php include './supplies/button.php' ; ?>
     <div class="row">
         <div class="col-md-7">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">ตารางผู้ใช้งานระบบ</h5>
+                    <h5 class="card-title">ตารางซัพพลายเออร์</h5>
                     <div class="table-responsive">
-                        <div align="center">
-                            <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">เพิ่มซัพพลายเออร์</button>
-                        </div>
                         <br />
                         <div id="employee_table">
                             <table class="table table-striped">

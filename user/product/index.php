@@ -42,7 +42,9 @@ $result1 = mysqli_query($connection, $query1);
                                         <td width="10%"><?php echo $row["product_sale"]?></td>
                                         <td width="10%"><?php echo $row["name_type"]?></td>
                                         <td><a href="?page=<?= $_GET['page'] ?>&function=update&sup_id=<?= $row['sup_id'] ?>" class="btn btn-sm btn-info">แก้ไขข้อมูล</a></td>
+                                        <td><a href="?page=<?= $_GET['page'] ?>&function=delete&product_id=<?= $row['product_id'] ?>" onclick="return confirm('คุณต้องการลบชื่อผู้ใช้ : <?= $row['product_name'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบสินค้า</a></td>
                                         <td class="text-center"><input type="button" name="view" value="ดูรายละเอียด" id="<?php echo $row["product_id"]; ?>" class="btn btn-success view_data" /></td>
+                                        
                                     </tr>
                                 <?php
                                 }

@@ -34,9 +34,9 @@ if (isset($_POST["product_id"])) {
           <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ประเภทสินค้า</label>
           <div class="col-sm-8">
               <h2 class="form-control">' . $row["name_type"] . '</h2>
-               </div>
           </div>
-               </div>  
+          </div>
+          </div>  
 
                <div class="col">
                <div class="form-group row">
