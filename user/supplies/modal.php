@@ -17,7 +17,7 @@
   <!-- /Employee Details -->
   <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
   <div id="add_data_Modal" class="modal fade">
-      <div class="modal-dialog" style="max-width: 50%;">
+      <div class="modal-dialog" style="max-width: 30%;">
           <div class="modal-content">
               <div class="modal-header">
                   <h4 class="modal-title">เพิ่มข้อมูลซัพพลายเออร์</h4>
@@ -68,13 +68,16 @@
                       </div>
 
                       <br />
+                      <div class="form-group row">
+                      <div class="col-sm-6">
                       <input type="hidden" name="employee_id" id="employee_id" />
-                      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
+                      <input type="submit" name="insert" id="insert" value="บันทึกข้อมูล" class="btn btn-success" />
                   </form>
               </div>
-          
+              <div class="col-sm-6">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">ปิดหน้าต่างนี้</button>
-              
+              </div>
+              </div>
           </div>
       </div>
   </div>

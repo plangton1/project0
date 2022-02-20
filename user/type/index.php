@@ -4,15 +4,13 @@ $result = mysqli_query($connection, $query);
 ?>
 
 <div class="from-group">
+<?php include './type/button.php' ; ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">ตารางประเภทสินค้า</h5>
                     <div class="table-responsive">
-                        <div align="center">
-                            <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">เพิ่มประเภทสินค้า</button>
-                        </div>
                         <br />
                         <div id="employee_table">
                             <table class="table table-striped">

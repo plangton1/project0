@@ -11,7 +11,35 @@ if (isset($_POST) && !empty($_POST)) {
     $user_phone = $_POST['user_phone'];
     $user_add = $_POST['user_add'];
     $user_date = $_POST['user_date'];
-    $sql = "UPDATE user SET user_name='$user_name',user_last='$user_last',user_phone='$user_phone',
+    $oldimage = $_POST['oldimage']; 
+    if (isset($_FILES['user_img']['name']) && !empty($_FILES['user_img']['name'])) {
+        $extension = array("jpeg", "jpg", "png");
+        $target = './user/upload/user/';
+        $filename = $_FILES['user_img']['name'];
+        $filetmp = $_FILES['user_img']['tmp_name'];
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        if (in_array($ext, $extension)) {
+            if (!file_exists($target . $filename)) {
+                if (move_uploaded_file($filetmp, $target . $filename)) {
+                    $filename = $filename;
+                } else {
+                    echo 'เพิ่มไม่สำเร็จ';
+                }
+            } else {
+                $newfilename = time() . $filename;
+                if (move_uploaded_file($filetmp, $target . $newfilename)) {
+                    $filename = $newfilename;
+                } else {
+                    echo 'เพิ่มเข้าไม่ได้';
+                }
+            }
+        } else {
+            echo 'ประเภทไม่ถูกต้อง';
+        }
+    } else {
+        $filename = $oldimage ;
+    }
+    $sql = "UPDATE user SET user_name='$user_name',user_last='$user_last',user_phone='$user_phone',user_img ='$filename' ,
     user_add = '$user_add' , user_date = '$user_date'  WHERE user_id = '$user_id'";
     if (mysqli_query($connection, $sql)) {
         $alert = '<script type="text/javascript">';
@@ -31,6 +59,17 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="card-body">
             <h4 class="card-title">แบบฟอร์มผู้ใช้งานระบบ</h4>
             <form action="" method="post" enctype=multipart/form-data>
+            <div class="form-group row">
+                    <label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
+                    <div class="col-sm-9 mb-3">
+                        <img id="preview" width="250" height="250" src="./user/upload/user/<?= $result['user_img']?>">
+                        <hr>
+                    </div>
+                    <div class="col-sm-5">
+                    <input type="file" class="form-control" name="user_img" id="user_img" required>
+                        <input type="hidden" name="oldimage" value="<?=$result['user_img']?>" >
+                </div>
+                </div>
                 <div class="form-group row">
                     <label for="fname" class="col-sm-3 text-end control-label col-form-label">ชื่อผู้ใช้งานระบบ</label>
                     <div class="col-sm-5">
@@ -68,3 +107,17 @@ if (isset($_POST) && !empty($_POST)) {
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function ReadURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#user_img").change(function() {
+        ReadURL(this);
+    });
+</script>

@@ -11,7 +11,7 @@ if (isset($_POST) && !empty($_POST)) {
      $created_at = '';
      if (isset($_FILES['sup_img']['name']) && !empty($_FILES['sup_img']['name'])) {
           $extension = array("jpeg", "jpg", "png");
-          $target = './upload/supplies';
+          $target = './upload/supplies/';
           $filename = $_FILES['sup_img']['name'];
           $filetmp = $_FILES['sup_img']['tmp_name'];
           $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -45,6 +45,7 @@ if (isset($_POST) && !empty($_POST)) {
            ";
           $message = 'เพิ่มข้อมูลเรียบร้อยแล้ว';
      }
+    
      if (mysqli_query($connect, $query)) {
           $output .= '<label class="text-success">' . $message . '</label>';
           $select_query = "SELECT * FROM supplies ORDER BY sup_id DESC";

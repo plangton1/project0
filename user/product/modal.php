@@ -17,7 +17,7 @@
     <!-- /Employee Details -->
     <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
     <div id="add_data_Modal" class="modal fade">
-        <div class="modal-dialog" style="max-width: 60%;">
+        <div class="modal-dialog" style="max-width: 50%;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">เพิ่มสินค้า</h4>
@@ -27,15 +27,16 @@
 
                 <div class="modal-body">
                     <form id="insert_form" enctype="multipart/form-data">
-
+<center>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
                             <div class="col-sm-6 mb-3">
                                 <img id="preview" width="150" height="150">
                                 <hr>
-                                <input type="file" class="form-control" id="product_img" name="product_img" />
+                                <input type="file" class="form-control btn btn-info" id="product_img" name="product_img" />
                             </div>
                         </div>
+</center>
 
                         <div class="input-group mb-3 ">
                             <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ชื่อสินค้า</label>
@@ -51,7 +52,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group row">
+                            <div class="input-group mb-3 ">
                                     <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ประเภทสินค้า</label>
                                     <select class="form-control" name="product_type" id="product_type">
                                         <option value="" selected disabled>ประเภทสินค้า</option>
@@ -64,19 +65,40 @@
 
 
                             <div class="col">
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ราคาต้นทุน</label>
-                                    <input type="text" class="form-control" name="product_price" id="product_price" />
+                            <div class="input-group mb-3 ">
+                                    <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">หน่วยนับ</label>
+                                    <input type="text" class="form-control" name="product_unit" id="product_unit" />
                                 </div>
                             </div>
                         </div>
                         
+                         
+                        <div class="row">
                             <div class="col">
-                                <div class="form-group row">
-                                <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ขำนวนสินค้า</label>
+                            <div class="input-group mb-3 ">
+                                <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ราคาต้นทุน</label>
+                                <input type="text" class="form-control" name="product_price" id="product_price" />
+                            </div>
+                            </div>
+
+                            <div class="col">
+                            <div class="input-group mb-3 ">
+                                    <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">ราคาขาย</label>
+                                    <input type="text" class="form-control" name="product_sale" id="product_sale" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                                 
+                        <div class="row">
+                            <div class="col">
+                            <div class="input-group mb-3 ">
+                                <label for="fname" class="col-sm-4 text-center control-label col-form-label  btn btn-info">จำนวนสินค้า</label>
                                 <input type="text" class="form-control" name="product_net" id="product_net" />
                             </div>
                             </div>
+                        </div>
+                        
                         
 
                             <input type="hidden" name="product_id" id="product_id" />

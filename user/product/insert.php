@@ -23,7 +23,10 @@ if (isset($_POST) && !empty($_POST)) {
      $product_net = $_POST["product_net"];
      $product_type = $_POST["product_type"];
      $product_detail = $_POST["product_detail"];
+     $product_sale = $_POST["product_sale"];
+     $product_unit = $_POST["product_unit"];
      $created_at = '';
+     // print_r($_POST);
      if ($_POST["product_id"] == '') {
         if (isset($_FILES['product_img']['name']) && !empty($_FILES['product_img']['name'])) {
                $extension = array("jpeg", "jpg", "png");
@@ -53,8 +56,8 @@ if (isset($_POST) && !empty($_POST)) {
                $filename = '';
           }
           $query = "  
-           INSERT INTO product(product_id,product_name,product_price,product_net,product_type,product_detail,product_img)  
-           VALUES('$product_id' , '$product_name','$product_price','$product_net','$product_type','$product_detail','$filename');  
+           INSERT INTO product(product_id,product_name,product_price,product_net,product_type,product_detail,product_img,product_sale,product_unit)  
+           VALUES('$product_id' , '$product_name','$product_price','$product_net','$product_type','$product_detail','$filename','$product_sale','$product_unit');  
            ";
           $message = 'เพิ่มข้อมูลเรียบร้อยแล้ว';
      } else {
@@ -73,7 +76,7 @@ if (isset($_POST) && !empty($_POST)) {
                echo $alert;
                exit();
           } else {
-               echo "Error: " . $sql4 . "<br>" . mysqli_error($conn);
+               echo "Error: " . $query . "<br>" . mysqli_error($conn);
           }
           mysqli_close($conn);
      }
