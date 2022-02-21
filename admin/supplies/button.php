@@ -6,9 +6,8 @@
                   <h1 class="font-light text-white">
                     <i class="mdi mdi-view-dashboard"></i>
                   </h1>
-                  <h6 class="text-white">อัพเดตสต๊อกสินค้า</h6>
+                  <h6 class="text-white">เพิ่มซัพพลายเออร์</h6>
                 </div>
               </div>
             </div>
-            
           </div>

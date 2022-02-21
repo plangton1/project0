@@ -61,7 +61,7 @@
     </div>
   </div>
   <?php include './include/script.php' ?>
-  <script src="extend/jquery-3.6.0.min.js"></script>
+  <!-- <script src="extend/jquery-3.6.0.min.js"></script> -->
 </body>
 <?php else : ?>
 <?php include('../login/index.php') ?>

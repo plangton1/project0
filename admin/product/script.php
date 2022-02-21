@@ -1,27 +1,10 @@
 <script>
+    
     $(document).ready(function() {
         $('#add').click(function() {
             $('#insert').val("Insert");
             $('#insert_form')[0].reset();
         });
-        $(document).on('click', '.edit_data', function() {
-            var product_id = $(this).attr("id");
-            $.ajax({
-                url: "./product/fetch.php",
-                method: "POST",
-                data: {
-                    product_id: product_id
-                },
-                dataType: "json",
-                success: function(data) {
-                    $('#product_name').val(data.name);
-                    $('#product_id').val(data.id);
-                    $('#insert').val("Update");
-                    $('#add_data_Modal').modal('show');
-                }
-            });
-        });
-
         
         $('#insert_form').on("submit", function(event) {
             event.preventDefault();
@@ -30,8 +13,12 @@
             } else {
                 $.ajax({
                     url: "./product/insert.php",
-                    method: "POST",
-                    data: $('#insert_form').serialize(),
+                    type: "POST",
+                    // data: $('#insert_form').serialize(),
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
                     beforeSend: function() {
                         $('#insert').val("Inserting");
                     },
@@ -43,7 +30,6 @@
                 });
             }
         });
-
 
         $(document).on('click', '.view_data', function() {
             var product_id = $(this).attr("id");

@@ -24,6 +24,50 @@
     <script src="./c/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="./c/dist/js/pages/chart/chart-page-init.js"></script>
 
-<!-- datatable -->
+    <!-- datatable -->
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    </script>
 
+    <!-- cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <!-- datatable -->
+    <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tableall').DataTable({
+        language: {
+
+            "decimal": "",
+            "emptyTable": "ไม่พบข้อมูล",
+            "info": "แสดง _START_ to _END_ of _TOTAL_ รายการ",
+            "infoEmpty": "แสดง 0 ถึง 0 จากทั้งหมด 0 รายการ",
+            "infoFiltered": "(filtered from _MAX_ total entries)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "แสดง _MENU_ รายการ",
+            "loadingRecords": "Loading...",
+            "processing": "Processing...",
+            "search": "ค้นหา:",
+            "zeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+            "paginate": {
+                "first": "First",
+                "last": "Last",
+                "next": "Next",
+                "previous": "Previous"
+            },
+            "aria": {
+                "sortAscending": ": activate to sort column ascending",
+                "sortDescending": ": activate to sort column descending"
+            }
+        }
+    }
+        );
+        });
+    </script>

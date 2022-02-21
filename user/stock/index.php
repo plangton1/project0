@@ -1,4 +1,12 @@
 <div class="from-group">
-<?php include './stock/button.php' ;?>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-body">
 
-</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

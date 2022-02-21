@@ -25,7 +25,12 @@
     <!-- Custom CSS -->
     <link href="./c/dist/css/style.min.css" rel="stylesheet" />  
     
-
+   
     <!-- modal -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+
+      <!-- datatable -->
+      <link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+      
   </head>

@@ -10,7 +10,7 @@ $query = mysqli_query($connection, $sql);
                 <div class="card-body">
                     <h5 class="card-title">ตารางผู้ใช้งานระบบ</h5>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="tableall">
                             <thead>
                                 <tr>
                                     <th>ลำดับ</th>
@@ -33,6 +33,7 @@ $query = mysqli_query($connection, $sql);
                                         <td><a href="?page=<?= $_GET['page'] ?>&function=delete&user_id=<?= $data['user_id'] ?>" onclick="return confirm('คุณต้องการลบชื่อผู้ใช้ : <?= $data['user_name'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบ</a></td>
                                     </tr>
                                 <?php endforeach; ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -104,9 +105,6 @@ $query = mysqli_query($connection, $sql);
 
 </div>
 
-<!-- cdn -->
-<!-- datatable -->
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
     function ReadURL(input) {

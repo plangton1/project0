@@ -25,13 +25,17 @@
         
         $('#insert_form').on("submit", function(event) {
             event.preventDefault();
-            if ($('#sup_name').val() == "") {
-                alert("กรุณาใส่ชื่อ");
+            if ($('sup_name').val() == "") {
+                alert("กรุณาใส่ชื่อสินค้า");
             } else {
                 $.ajax({
                     url: "./supplies/insert.php",
-                    method: "POST",
-                    data: $('#insert_form').serialize(),
+                    type: "POST",
+                    // data: $('#insert_form').serialize(),
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
                     beforeSend: function() {
                         $('#insert').val("Inserting");
                     },
