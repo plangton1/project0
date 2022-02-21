@@ -54,8 +54,8 @@
           include('product/index.php');
         }
       } elseif (isset($_GET['page']) && $_GET['page'] == 'stock') {
-        if (isset($_GET['function']) && $_GET['function'] == 'update') {
-          include('stock/update.php');
+        if (isset($_GET['function']) && $_GET['function'] == 'detail') {
+          include('stock/detail.php');
         } elseif (isset($_GET['function']) && $_GET['function'] == 'insert') {
           include('stock/insert.php');
         } elseif (isset($_GET['function']) && $_GET['function'] == 'delete') {

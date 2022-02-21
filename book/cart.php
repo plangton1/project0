@@ -1,32 +1,32 @@
 <?php
 	session_start();
 	
-	$p_id = $_GET['p_id']; 
+	$product_id = $_GET['product_id']; 
 	$act = $_GET['act'];
 
-	if($act=='add' && !empty($p_id))
+	if($act=='add' && !empty($product_id))
 	{
-		if(isset($_SESSION['cart'][$p_id]))
+		if(isset($_SESSION['cart'][$product_id]))
 		{
-			$_SESSION['cart'][$p_id]++;
+			$_SESSION['cart'][$product_id]++;
 		}
 		else
 		{
-			$_SESSION['cart'][$p_id]=1;
+			$_SESSION['cart'][$product_id]=1;
 		}
 	}
 
-	if($act=='remove' && !empty($p_id))  //ยกเลิกการสั่งซื้อ
+	if($act=='remove' && !empty($product_id))  //ยกเลิกการสั่งซื้อ
 	{
-		unset($_SESSION['cart'][$p_id]);
+		unset($_SESSION['cart'][$product_id]);
 	}
 
 	if($act=='update')
 	{
 		$amount_array = $_POST['amount'];
-		foreach($amount_array as $p_id=>$amount)
+		foreach($amount_array as $product_id=>$amount)
 		{
-			$_SESSION['cart'][$p_id]=$amount;
+			$_SESSION['cart'][$product_id]=$amount;
 		}
 	}
 ?>
@@ -57,21 +57,21 @@ $total=0;
 if(!empty($_SESSION['cart']))
 {
 	include("connect.php");
-	foreach($_SESSION['cart'] as $p_id=>$qty)
+	foreach($_SESSION['cart'] as $product_id=>$qty)
 	{
-		$sql = "select * from product where p_id=$p_id";
+		$sql = "select * from product where product_id='$product_id'";
 		$query = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($query);
-		$sum = $row['p_price'] * $qty;
+		$sum = $row['product_price'] * $qty;
 		$total += $sum;
 		echo "<tr>";
-		echo "<td width='334'>" . $row["p_name"] . "</td>";
-		echo "<td width='46' align='right'>" .number_format($row["p_price"],2) . "</td>";
+		echo "<td width='334'>" . $row["product_name"] . "</td>";
+		echo "<td width='46' align='right'>" .number_format($row["product_price"],2) . "</td>";
 		echo "<td width='57' align='right'>";  
-		echo "<input type='text' name='amount[$p_id]' value='$qty' size='2'/></td>";
+		echo "<input type='text' name='amount[$product_id]' value='$qty' size='2'/></td>";
 		echo "<td width='93' align='right'>".number_format($sum,2)."</td>";
 		//remove product
-		echo "<td width='46' align='center'><a href='cart.php?p_id=$p_id&act=remove'>ลบ</a></td>";
+		echo "<td width='46' align='center'><a href='cart.php?product_id=$product_id&act=remove'>ลบ</a></td>";
 		echo "</tr>";
 	}
 	echo "<tr>";
