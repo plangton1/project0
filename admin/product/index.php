@@ -20,7 +20,7 @@ $result1 = mysqli_query($connection, $query1);
 ?>
 
 <div class="from-group">
-    <?php include './product/button.php'; ?>
+  
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -39,8 +39,8 @@ $result1 = mysqli_query($connection, $query1);
                                         <th width="10%">ราคาทุน</th>
                                         <th width="10%">ราคาขาย</th>
                                         <th width="10%">ประเภทสินค้า</th>
-                                        <th width="10%">แก้ไขข้อมูลสินค้า</th>
-                                        <th width="10%">ลบสินค้า</th>
+                                        <!-- <th width="10%">แก้ไขข้อมูลสินค้า</th> -->
+                                        <!-- <th width="10%">ลบสินค้า</th> -->
                                         <th width="10%" class="text-center">ดูรายละเอียด</th>
                                     </tr>
                                 </thead>
@@ -59,8 +59,8 @@ $result1 = mysqli_query($connection, $query1);
                                             <td width="10%"><?php echo $row["product_price"] ?></td>
                                             <td width="10%"><?php echo $row["product_sale"] ?></td>
                                             <td width="10%"><?php echo $row["name_type"] ?></td>
-                                            <td><a href="?page=<?= $_GET['page'] ?>&function=update&product_id=<?= $row['product_id'] ?>" class="btn btn-sm btn-info">แก้ไขข้อมูล</a></td>
-                                            <td><a href="?page=<?= $_GET['page'] ?>&function=delete&product_id=<?= $row['product_id'] ?>" onclick="return confirm('คุณต้องการลบสินค้านี้ : <?= $row['product_name'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบสินค้า</a></td>
+                                            <!-- <td><a href="?page=<?= $_GET['page'] ?>&function=update&product_id=<?= $row['product_id'] ?>" class="btn btn-sm btn-info">แก้ไขข้อมูล</a></td> -->
+                                            <!-- <td><a href="?page=<?= $_GET['page'] ?>&function=delete&product_id=<?= $row['product_id'] ?>" onclick="return confirm('คุณต้องการลบสินค้านี้ : <?= $row['product_name'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบสินค้า</a></td> -->
                                             <td class="text-center"><input type="button" name="view" value="ดูรายละเอียด" id="<?php echo $row["product_id"]; ?>" class="btn btn-success view_data" /></td>
 
                                         </tr>

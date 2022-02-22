@@ -9,6 +9,9 @@ if (isset($_GET['product_id']) && !empty($_GET['product_id'])) {
 <table>
     <tr>
         <td><?php echo $result['product_name']; ?></td>
-        <a href="?page=<?= $_GET['page'] ?>&function=stock&product_id=<?= $result['product_id'] ?>&act=add" class="btn btn-sm btn-info">เพิ่มลงคลังสินค้า</a>
+        <td><?php echo $result['product_price']; ?></td>
+        <td><?php echo $result['product_net']; ?></td>
+        <td><?php echo $result['product_sale']; ?></td>
+        <a href="?page=<?= $_GET['page'] ?>&function=stock&product_id=<?= $result['product_id'] ?>&acther=add" class="btn btn-sm btn-info">เพิ่มลงคลังสินค้า</a>
     </tr>
 </table>
