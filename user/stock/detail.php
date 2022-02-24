@@ -6,7 +6,8 @@ if (isset($_GET['product_id']) && !empty($_GET['product_id'])) {
     $result = mysqli_fetch_assoc($query);
 }
 ?>
-<table>
+<table class="table table=bordered" id="tableall">
+    
     <tr>
         <td><?php echo $result['product_name']; ?></td>
         <td><?php echo $result['product_price']; ?></td>
