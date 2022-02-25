@@ -1,4 +1,17 @@
 <?php
+
+function datetodb($date)
+//    23/04/2564
+{
+    $day = substr($date, 0, 2); // substrตัดข้อความที่เป็นสติง
+    $month = substr($date, 3, 2); //ตัดตำแหน่ง
+    $year = substr($date, 6) - 543;
+    $dateme = $year . '-' . $month . '-' . $day;
+    return $dateme; //return ส่งค่ากลับไป
+}
+
+
+
 @$mode = $_REQUEST["mode"];
 if (($mode == "insert_data")) {
     $username = $_REQUEST['username'];
@@ -6,7 +19,7 @@ if (($mode == "insert_data")) {
     $user_last = $_REQUEST['user_last'];
     $user_phone = $_REQUEST['user_phone'];
     $user_add = $_REQUEST['user_add'];
-    $user_date = $_REQUEST['user_date'];
+    $user_date = datetodb($_REQUEST['user_date']);
     $password = rand(0, 999999);
     $role = 'เจ้าของกิจการ';
     if (isset($_FILES['user_img']['name']) && !empty($_FILES['user_img']['name'])) {

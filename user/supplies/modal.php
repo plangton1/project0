@@ -17,7 +17,7 @@
   <!-- /Employee Details -->
   <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
   <div id="add_data_Modal" class="modal fade">
-      <div class="modal-dialog" style="max-width: 30%;">
+      <div class="modal-dialog" style="max-width: 40%;">
           <div class="modal-content">
               <div class="modal-header">
                   <h4 class="modal-title">เพิ่มข้อมูลซัพพลายเออร์</h4>
@@ -63,7 +63,7 @@
                       <div class="form-group row">
                           <label for="fname" class="col-sm-3 text-end control-label col-form-label">วันเดือนปีเกิด</label>
                           <div class="col-sm-6">
-                              <input type="date" class="form-control" name="sup_date" id="sup_date" />
+                              <input type="text" id="date1" class="form-control" name="sup_date" id="sup_date" />
                           </div>
                       </div>
 
@@ -101,3 +101,16 @@
         ReadURL(this);
     });
 </script>
+<!-- date -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://รับเขียนโปรแกรม.net/picker_date/picker_date.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+<script>
+    picker_date(document.getElementById("date1"), {
+        year_range: "-12:+10"
+    });
+    picker_date(document.getElementById("date3"), {
+        year_range: "-12:+10"
+    });
+</script>
+<!-- date -->

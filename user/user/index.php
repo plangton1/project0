@@ -1,4 +1,5 @@
 <?php
+include './date.php' ;
 include 'insert.php';
 $sql = "SELECT * FROM user";
 $query = mysqli_query($connection, $sql);
@@ -16,7 +17,6 @@ $query = mysqli_query($connection, $sql);
                                     <th>ลำดับ</th>
                                     <th>ชื่อผู้ใช้งานระบบ</th>
                                     <th>วันเดือนปีเกิด</th>
-                                    <th>รายละเอียด</th>
                                     <th>แก้ไข</th>
                                     <th>ลบ</th>
                                 </tr>
@@ -27,8 +27,7 @@ $query = mysqli_query($connection, $sql);
                                     <tr>
                                         <td><?= $i++ ?></td>
                                         <td><?= $data['user_name'] . " " . $data['user_last'] ?></td>
-                                        <td><?= $data['user_date'] ?></td>
-                                        <td><?= $data['user_date'] ?></td>
+                                        <td><?= datethai($data['user_date']) ; ?></td>
                                         <td><a href="?page=<?= $_GET['page'] ?>&function=update&user_id=<?= $data['user_id'] ?>" class="btn btn-sm btn-warning">แก้ไข</a></td>
                                         <td><a href="?page=<?= $_GET['page'] ?>&function=delete&user_id=<?= $data['user_id'] ?>" onclick="return confirm('คุณต้องการลบชื่อผู้ใช้ : <?= $data['user_name'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบ</a></td>
                                     </tr>
@@ -86,7 +85,7 @@ $query = mysqli_query($connection, $sql);
                         <div class="form-group row">
                             <label for="cono1" class="col-sm-3 text-end control-label col-form-label">วันเดือนปีเกิด</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" name="user_date" />
+                                <input type="text" id="date1" class="form-control" name="user_date" />
                             </div>
                         </div>
                     </div>
@@ -120,3 +119,16 @@ $query = mysqli_query($connection, $sql);
         ReadURL(this);
     });
 </script>
+<!-- date -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://รับเขียนโปรแกรม.net/picker_date/picker_date.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+<script>
+    picker_date(document.getElementById("date1"), {
+        year_range: "-12:+10"
+    });
+    picker_date(document.getElementById("date3"), {
+        year_range: "-12:+10"
+    });
+</script>
+<!-- date -->

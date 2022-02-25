@@ -1,4 +1,5 @@
 <?php
+include '../date.php' ;
 if (isset($_POST["employee_id"])) {
      $output = '';
      include '../connection.php'; // MySQL Connection
@@ -23,7 +24,7 @@ if (isset($_POST["employee_id"])) {
                </tr>  
                <tr>  
                     <td width="10%"><label>วันเดือนปีเกิด</label></td>  
-                    <td width="10%">' . $row["user_date"] . '</td>  
+                    <td width="10%">' . datethai($row["user_date"]) . '</td>  
                </tr>  
            ';
      }

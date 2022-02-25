@@ -1,5 +1,15 @@
 <?php
-include 'conn.php'; // MySQL Connection
+
+function datetodb($date)
+//    23/04/2564
+{
+    $day = substr($date, 0, 2); // substrตัดข้อความที่เป็นสติง
+    $month = substr($date, 3, 2); //ตัดตำแหน่ง
+    $year = substr($date, 6) - 543;
+    $dateme = $year . '-' . $month . '-' . $day;
+    return $dateme; //return ส่งค่ากลับไป
+}
+include 'conn.php'; // MySQL Connection 
 if (isset($_POST) && !empty($_POST)) {
      $output = '';
      $message = '';
@@ -7,7 +17,7 @@ if (isset($_POST) && !empty($_POST)) {
      $sup_last = $_POST["sup_last"];
      $sup_add = $_POST["sup_add"];
      $sup_phone = $_POST["sup_phone"];
-     $sup_date = $_POST["sup_date"];
+     $sup_date = datetodb($_POST["sup_date"]);
      $created_at = '';
      if (isset($_FILES['sup_img']['name']) && !empty($_FILES['sup_img']['name'])) {
           $extension = array("jpeg", "jpg", "png");
