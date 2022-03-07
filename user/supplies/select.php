@@ -1,14 +1,21 @@
 <?php
+include '../date.php' ;
 if (isset($_POST["employee_id"])) {
      $output = '';
      include 'conn.php'; // MySQL Connection
-     $query  = "SELECT * FROM supplies WHERE sup_id = '" . $_POST["employee_id"] . "'";
+     $query  = "SELECT * FROM supplies_1 WHERE sup_id = '" . $_POST["employee_id"] . "'";
      $result = mysqli_query($connect, $query);
      $output .= '  
       <div class="table-responsive">  
            <table class="table table-striped">';
      while ($row = mysqli_fetch_array($result)) {
           $output .= '  
+          <tr>
+          <label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
+          <div class="col-sm-9 mb-3">
+              <img id="preview" width="250" height="250" src="./supplies/upload/supplies/' . $row['sup_img'] . ' ">
+          </div>
+          </tr>
                 <tr>  
                      <td width="10%"><label>ชื่อและนามสกุล</label></td>  
                      <td width="10%">' . $row["sup_name"] . ' ' . $row["sup_last"] . '</td>  
@@ -23,7 +30,7 @@ if (isset($_POST["employee_id"])) {
                </tr>  
                <tr>  
                     <td width="10%"><label>วันเดือนปีเกิด</label></td>  
-                    <td width="10%">' . $row["sup_date"] . '</td>  
+                    <td width="10%">' . datethai($row["sup_date"]) . '</td>  
                </tr>  
            ';
      }

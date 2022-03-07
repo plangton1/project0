@@ -1,7 +1,8 @@
 <?php
 include 'conn.php'; // MySQL Connection
-$query = "SELECT * FROM supplies ORDER BY sup_id DESC";
+$query = "SELECT * FROM supplies_1 ORDER BY sup_id DESC";
 $result = mysqli_query($connect, $query);
+
 ?>
 
 <div class="from-group">
@@ -18,6 +19,7 @@ $result = mysqli_query($connect, $query);
                                 <thead>
                                     <tr>
                                         <th width="10%">ลำดับ</th>
+                                        <th width="10%">รูปซัพพลายเออร์</th>
                                         <th width="10%">ชื่อซัพพลายเออร์</th>
                                         <th width="10%">เบอร์โทรศัพท์ซัพพลายเออร์</th>
                                         <th width="10%" class="text-center">แก้ไขข้อมูล</th>
@@ -33,6 +35,7 @@ $result = mysqli_query($connect, $query);
 
                                         <tr>
                                             <td><?php echo $i++;  ?></td>
+                                            <td><img src="./supplies/upload/supplies/<?=$row['sup_img'];?>" width="100" height="100"></td>
                                             <td><?php echo $row["sup_name"] . ' ' . $row["sup_last"]; ?></td>
                                             <td><?php echo $row["sup_phone"]; ?></td>
                                             <td><a href="?page=<?= $_GET['page'] ?>&function=update&sup_id=<?= $row['sup_id'] ?>" class="btn btn-sm btn-info">แก้ไขข้อมูล</a></td>

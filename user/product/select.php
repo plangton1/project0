@@ -81,11 +81,9 @@ if (isset($_POST["product_id"])) {
           <div class="form-group row">
           <label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
           <div class="col-sm-9 mb-3">
-              <img id="preview" width="250" height="250" src="./upload/product/' . $row['product_img'] . ' ">
+              <img id="preview" width="250" height="250" src="./product/upload/product/' . $row['product_img'] . ' ">
           </div>
           <div class="col-sm-5">
-              <input type="file" class="form-control" name="product_img" id="product_img" required  style="display:none;">
-              <input type="hidden" name="oldimage" value="' . $row['product_img'] . ' " style="display:none;">
           </div>
       </div>
                </div>

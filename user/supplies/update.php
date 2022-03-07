@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['sup_id']) && !empty($_GET['sup_id'])) {
     $sup_id = $_GET['sup_id'];
-    $sql = "SELECT * FROM supplies WHERE sup_id = '$sup_id'";
+    $sql = "SELECT * FROM supplies_1 WHERE sup_id = '$sup_id'";
     $query = mysqli_query($connection, $sql);
     $result = mysqli_fetch_assoc($query);
 }
@@ -39,7 +39,7 @@ if (isset($_POST) && !empty($_POST)) {
     } else {
         $filename = $oldimage;
     }
-    $sql = "UPDATE supplies SET sup_name='$sup_name',sup_last='$sup_last',sup_phone='$sup_phone', sup_img ='$filename' ,
+    $sql = "UPDATE supplies_1 SET sup_name='$sup_name',sup_last='$sup_last',sup_phone='$sup_phone', sup_img ='$filename' ,
     sup_add = '$sup_add' , sup_date = '$sup_date'  WHERE sup_id = '$sup_id'";
    if (mysqli_query($connection, $sql)) {
         $alert = '<script type="text/javascript">';

@@ -15,6 +15,7 @@ $query = mysqli_query($connection, $sql);
                             <thead>
                                 <tr>
                                     <th>ลำดับ</th>
+                                    <th>รูปผู้ใช้งานระบบ</th>
                                     <th>ชื่อผู้ใช้งานระบบ</th>
                                     <th>วันเดือนปีเกิด</th>
                                     <th>แก้ไข</th>
@@ -26,6 +27,7 @@ $query = mysqli_query($connection, $sql);
                                 <?php foreach ($query as $data) : ?>
                                     <tr>
                                         <td><?= $i++ ?></td>
+                                        <td><img src="./user/upload/user/<?=$data['user_img'];?>" width="100" height="100"></td>
                                         <td><?= $data['user_name'] . " " . $data['user_last'] ?></td>
                                         <td><?= datethai($data['user_date']) ; ?></td>
                                         <td><a href="?page=<?= $_GET['page'] ?>&function=update&user_id=<?= $data['user_id'] ?>" class="btn btn-sm btn-warning">แก้ไข</a></td>

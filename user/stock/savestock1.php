@@ -1,48 +1,43 @@
 <?php
-	session_start();
     include("connect.php");  
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Confirm</title>
-</head>
-<body>
 <!--สร้างตัวแปรสำหรับบันทึกการสั่งซื้อ -->
 <?php
-	$name = $_POST["name"];
-	$address = $_POST["address"];
-	$email = $_POST["email"];
-	$phone = $_POST["phone"];
-	$total_qty = $_POST["total_qty"];
-	$total = $_POST["total"];
-	$dttm = Date("Y-m-d G:i:s");
+	$sup_name = $_POST["sup_name"];
+    $sup_last = $_POST["sup_last"];
+	$sup_add = $_POST["sup_add"];
+	$sup_phone = $_POST["sup_phone"];
+	$sup_qty = $_POST["sup_qty"];
+	$sup_date = $_POST["sup_date"];
+	$sup_total = $_POST["sup_total"];
+	$sup_dttm = Date("Y-m-d G:i:s");
 	//บันทึกการสั่งซื้อลงใน order_detail
 	mysqli_query($conn, "BEGIN"); 
-	$sql1	= "insert into order_head values(null, '$dttm', '$name', '$address', '$email', '$phone', '$total_qty', '$total')";
+	$sql1	= "insert into supplies_1 values(null, '$sup_dttm', '$sup_name', '$sup_last' , '$sup_add' , '$sup_phone', '$sup_date' , '$sup_qty', '$sup_total')";
 	$query1	= mysqli_query($conn, $sql1);
 	//ฟังก์ชั่น MAX() จะคืนค่าที่มากที่สุดในคอลัมน์ที่ระบุ ออกมา หรือจะพูดง่ายๆก็ว่า ใช้สำหรับหาค่าที่มากที่สุด นั่นเอง.
-	$sql2 = "select max(o_id) as o_id from order_head where o_name='$name' and o_email='$email' and o_dttm='$dttm' ";
+	$sql2 = "select max(sup_id) as sup_id from supplies_1 where sup_name='$sup_name'  and sup_dttm='$sup_dttm' ";
 	$query2	= mysqli_query($conn, $sql2);
 	$row = mysqli_fetch_array($query2);
-	$o_id = $row["o_id"];
+	$sup_id = $row["sup_id"];
 //PHP foreach() เป็นคำสั่งเพื่อนำข้อมูลออกมาจากตัวแปลที่เป็นประเภท array โดยสามารถเรียกค่าได้ทั้ง $key และ $value ของ array
-	foreach($_SESSION['cart'] as $p_id=>$qty)
+	foreach($_SESSION['cart'] as $product_id=>$stock_qty)
 	{
-		$sql3	= "select * from product where p_id=$p_id";
+		$sql3	= "select * from product where product_id = '$product_id' ";
 		$query3	= mysqli_query($conn, $sql3);
 		$row3	= mysqli_fetch_array($query3);
-		$total	= $row3['p_price']*$qty;
+		$stock_total	= $row3['product_price']*$stock_qty;
+		print_r($sql3);
+		exit;
 		
-		$sql4	= "insert into order_detail values(null, '$o_id', '$p_id', '$qty', '$total')";
+		$sql4	= "insert into stock_1 values(null, '$sup_id', '$product_id', '$stock_qty', '$stock_total')";
 		$query4	= mysqli_query($conn, $sql4);
 	}
 	
 	if($query1 && $query4){
 		mysqli_query($conn, "COMMIT");
 		$msg = "บันทึกข้อมูลเรียบร้อยแล้ว ";
-		foreach($_SESSION['cart'] as $p_id)
+		foreach($_SESSION['cart'] as $product_id)
 		{	
 			//unset($_SESSION['cart'][$p_id]);
 			unset($_SESSION['cart']);
@@ -55,13 +50,5 @@
 ?>
 <script type="text/javascript">
 	alert("<?php echo $msg;?>");
-	window.location ='product.php';
+	window.location ='?page=stock';
 </script>
-
- 
-
-
-
-
-</body>
-</html>

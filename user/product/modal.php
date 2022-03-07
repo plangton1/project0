@@ -1,6 +1,6 @@
     <!-- Employee Details -->
     <div id="dataModal" class="modal fade">
-        <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-dialog" style="max-width: 50%;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">รายละเอียดของสินค้า</h4>

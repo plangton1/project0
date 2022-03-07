@@ -19,6 +19,15 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="?page=sale"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-view-dashboard"></i
+                  ><span class="hide-menu">ขายสินค้า</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="?page=user"
                   aria-expanded="false"
                   ><i class="mdi mdi-chart-bar"></i
@@ -49,7 +58,7 @@
                   href="?page=stock"
                   aria-expanded="false"
                   ><i class="mdi mdi-relative-scale"></i
-                  ><span class="hide-menu">คลังสินค้า</span></a
+                  ><span class="hide-menu">อัพเดตสต็อก</span></a
                 >
               </li>
               <li class="sidebar-item">

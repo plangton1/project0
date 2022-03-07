@@ -63,9 +63,25 @@
         } else {
           include('stock/index.php');
         }
+      } elseif (isset($_GET['page']) && $_GET['page'] == 'sale') {
+        if (isset($_GET['function']) && $_GET['function'] == 'detail') {
+          include('sale/product_detail.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'insert') {
+          include('sale/insert.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'delete') {
+          include('sale/delete.php');
+        } else {
+          include('sale/index.php');
+        }
+      }elseif (isset($_GET['page']) && $_GET['page'] == 'profile') {
+        include('profile.php');
+      }elseif (isset($_GET['page']) && $_GET['page'] == 'confirm') {
+        include('stock/confirm.php');
+      }elseif (isset($_GET['page']) && $_GET['page'] == 'savestock') {
+        include('stock/savestock.php');
       }elseif (isset($_GET['page']) && $_GET['page'] == 'logout') {
       include('logout/index.php');
-      }
+        }
       ?>
           </div>
   </div>

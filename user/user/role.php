@@ -8,6 +8,7 @@
                         <thead>
                             <tr>
                                 <th>ลำดับ</th>
+                                <th>รูปผู้ใช้งานระบบ</th>
                                 <th>ชื่อผู้ใช้งานระบบ</th>
                                 <th>วันเดือนปีเกิด</th>
                                 <th>รายละเอียด</th>
@@ -19,6 +20,7 @@
                                 <tr>
                                     <?php if ($data['role'] == 'ผู้ดูแลระบบ') : ?>
                                         <td><?= $i++ ?></td>
+                                        <td><img src="./user/upload/user/<?=$data['user_img'];?>" width="100" height="100"></td>
                                         <td><?= $data['user_name'] . " " . $data['user_last'] ?></td>
                                         <td><?= $data['user_date'] ?></td>
                                         <td class="text-center"><input type="button" name="view" value="ดูรายละเอียด" id="<?php echo $data["user_id"]; ?>" class="btn btn-success view_data" /></td>
@@ -40,6 +42,7 @@
                         <thead>
                             <tr>
                                 <th>ลำดับ</th>
+                                <th>รูปผู้ใช้งานระบบ</th>
                                 <th>ชื่อผู้ใช้งานระบบ</th>
                                 <th>วันเดือนปีเกิด</th>
                                 <th>รายละเอียด</th>
@@ -51,6 +54,7 @@
                                 <tr>
                                     <?php if ($data['role'] == 'เจ้าของกิจการ') : ?>
                                         <td><?= $i++ ?></td>
+                                        <td><img src="./user/upload/user/<?=$data['user_img'];?>" width="100" height="100"></td>
                                         <td><?= $data['user_name'] . " " . $data['user_last'] ?></td>
                                         <td><?= $data['user_date'] ?></td>
                                         <td class="text-center"><input type="button" name="view" value="ดูรายละเอียด" id="<?php echo $data["user_id"]; ?>" class="btn btn-success view_data" /></td>

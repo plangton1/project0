@@ -17,9 +17,8 @@ if (isset($_GET)) {
 					<div class="form-group row">
 						<label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
 						<div class="col-sm-6 mb-3">
-							<img id="preview" width="150" height="150">
-							<hr>
-						</div>
+						<img id="preview" width="250" height="250" src="./product/upload/product/<?=$row['product_img'];?>">
+											</div>
 					</div>
 				</div>
 			</div>

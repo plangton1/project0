@@ -1,6 +1,7 @@
   <!-- Employee Details -->
+  <center>
   <div id="dataModal" class="modal fade">
-      <div class="modal-dialog" style="max-width: 60%;">
+      <div class="modal-dialog" style="max-width: 30%;">
           <div class="modal-content">
               <div class="modal-header">
                   <h4 class="modal-title">รายละเอียดของซัพพลายเออร์</h4>
@@ -14,6 +15,7 @@
           </div>
       </div>
   </div>
+  </center>
   <!-- /Employee Details -->
   <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
   <div id="add_data_Modal" class="modal fade">

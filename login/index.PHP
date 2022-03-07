@@ -18,7 +18,7 @@ if (isset($_POST) && !empty($_POST)) {
         $result = mysqli_fetch_assoc($query);
         $_SESSION['user_login'] = $result['username'];
         $_SESSION['role_login'] = $result['role'];
-        $_SESSION['image_login'] = $result['image'];
+        $_SESSION['image_login'] = $result['user_img'];
 
         
         if ($_SESSION['role_login']  == 'ผู้ดูแลระบบ') {
