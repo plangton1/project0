@@ -13,12 +13,13 @@ require_once('connect.php');
 	$sup_qty = $_POST["sup_qty"];
 	$sup_date = $_POST["sup_date"];
 	$sup_total = $_POST["sup_total"];
+    $sup_img = $_POST["sup_img"]; 
 	$sup_dttm = Date("Y-m-d G:i:s");
  
  
  //บันทึกการสั่งซื้อลงใน order_detail
  mysqli_query($conn, "BEGIN"); 
- $sql1 = "insert into supplies_1 values(null, '$sup_dttm', '$sup_name', '$sup_last' , '$sup_add' , '$sup_phone', '$sup_date' , '$sup_qty', '$sup_total')";
+$sql1 = "insert into supplies_1 values(null ,'$sup_img' , '$sup_dttm', '$sup_name', '$sup_last' , '$sup_add' , '$sup_phone', '$sup_date' , '$sup_qty', '$sup_total')";
  
  $query1 = mysqli_query($conn, $sql1);
  

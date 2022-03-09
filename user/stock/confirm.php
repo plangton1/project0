@@ -41,9 +41,6 @@ include("connect.php");
     <div class="col-md-6">
       <table class="table table-bordered">
         <tr>
-          <td colspan="2">เพิ่มซัพพลายเออร์</td>
-        </tr>
-        <tr>
           <td>ชื่อ</td>
           <td><input name="sup_name" type="text" id="sup_name" required /></td>
         </tr>
@@ -83,3 +80,23 @@ include("connect.php");
     </div>
   </div>
 </form>
+<!-- / PHP Ajax Update MySQL Data Through Bootstrap Modal -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- datatable -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  function ReadURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#preview').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#sup_img").change(function() {
+    ReadURL(this);
+  });
+</script>

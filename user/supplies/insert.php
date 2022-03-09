@@ -50,12 +50,11 @@ if (isset($_POST) && !empty($_POST)) {
           $query = "  ";
      } else {
           $query = "  
-           INSERT INTO supplies_1(sup_name,sup_last,sup_add,sup_phone,sup_date , created_at , sup_img)  
-           VALUES('$sup_name','$sup_last','$sup_add','$sup_phone','$sup_date' , CURDATE() ,'$filename');  
+           INSERT INTO supplies_1(sup_name,sup_last,sup_add,sup_phone,sup_date , created_at , sup_img , sup_dttm , sup_qty , sup_total)  
+           VALUES('$sup_name','$sup_last','$sup_add','$sup_phone','$sup_date' , CURDATE() ,'$filename' , '' , '' ,'');  
            ";
           $message = 'เพิ่มข้อมูลเรียบร้อยแล้ว';
      }
-    
      if (mysqli_query($connect, $query)) {
           $output .= '<label class="text-success">' . $message . '</label>';
           $select_query = "SELECT * FROM supplies_1 ORDER BY sup_id DESC";
