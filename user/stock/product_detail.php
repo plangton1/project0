@@ -17,8 +17,8 @@ if (isset($_GET)) {
 					<div class="form-group row">
 						<label for="fname" class="col-sm-3 text-end control-label col-form-label">รูปภาพ</label>
 						<div class="col-sm-6 mb-3">
-						<img id="preview" width="250" height="250" src="./product/upload/product/<?=$row['product_img'];?>">
-											</div>
+							<img id="preview" width="250" height="250" src="./product/upload/product/<?= $row['product_img']; ?>">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -29,7 +29,7 @@ if (isset($_GET)) {
 							<a class="btn btn-primary" href='?page=<?= $_GET['page'] ?>&function=stock&product_id=<?php echo $row['product_id']; ?>&act=add'> เพิ่มลงคลัง </a>
 						</div>
 						<div class="col-sm-6 mb-3">
-						<a class="btn btn-danger" href="javascript:window.history.back(-1);">ย้อนกลับ</a>
+							<a class="btn btn-danger" href="javascript:window.history.back(-1);">ย้อนกลับ</a>
 						</div>
 					</div>
 				</div>

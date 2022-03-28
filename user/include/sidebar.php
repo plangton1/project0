@@ -34,7 +34,7 @@
                   ><span class="hide-menu">รายการผู้ใช้งานระบบ</span></a
                 >
               </li>
-              <li class="sidebar-item">
+              <!-- <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="?page=supplies"
@@ -42,7 +42,7 @@
                   ><i class="mdi mdi-chart-bubble"></i
                   ><span class="hide-menu">รายการซัพพลายเออร์</span></a
                 >
-              </li>
+              </li> -->
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"

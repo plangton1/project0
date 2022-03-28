@@ -42,25 +42,25 @@ include("connect.php");
       <table class="table table-bordered">
         <tr>
           <td>ชื่อ</td>
-          <td><input name="sup_name" type="text" id="sup_name" required /></td>
+          <td><input name="sup_name" type="text" id="sup_name"  /></td>
         </tr>
         <tr>
           <td>นามสกุล</td>
-          <td><input name="sup_last" type="text" id="sup_last" required /></td>
+          <td><input name="sup_last" type="text" id="sup_last"  /></td>
         </tr>
         <tr>
           <td width="22%">ที่อยู่</td>
           <td width="78%">
-            <textarea name="sup_add" cols="35" rows="5" id="sup_add" required></textarea>
+            <textarea name="sup_add" cols="35" rows="5" id="sup_add" ></textarea>
           </td>
         </tr>
         <tr>
           <td>วันเดือนปีเกิด</td>
-          <td><input name="sup_date" type="date" id="sup_date" required /></td>
+          <td><input name="sup_date" type="date" id="sup_date"  /></td>
         </tr>
         <tr>
           <td>เบอร์ติดต่อ</td>
-          <td><input name="sup_phone" type="text" id="sup_phone" required /></td>
+          <td><input name="sup_phone" type="text" id="sup_phone"  /></td>
         </tr>
         <tr>
           <td colspan="2">
